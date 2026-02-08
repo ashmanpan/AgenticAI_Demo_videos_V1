@@ -1,0 +1,10 @@
+.env
+*.env.txt
+elevaanlabs-api-key*
+frames/
+video_cropped.mp4
+merge_cmd.sh
+audio/test.mp3
+audio/filelist.txt
+*.Zone.Identifier
+incident-mgmt-demo-final.mp4
