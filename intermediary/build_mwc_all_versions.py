@@ -178,24 +178,22 @@ NARR_300_SECTIONS = [
     # --- Security Guardrails ---
     {"name": "n300_11_security", "src": "mwc", "clip_start": 395, "clip_dur": 30, "target_dur": 26,
      "text": "Security is built in from the ground up. When the engineer attempts to extract router credentials, the message is immediately blocked by Cisco AI Defence. Similarly, personally identifiable information is blocked due to PII protection. These guardrails ensure the AI Assistant remains a secure, trustworthy tool."},
-    # --- DC / Broadband Use Case ---
-    {"name": "n300_12_dc_ticket", "src": "otap", "clip_start": 30, "clip_dur": 40, "target_dur": 16,
-     "text": "The platform extends beyond BGP troubleshooting. Here, a broadband service disruption in the Dombivli area is reported — affecting AirFiber-FTTH connectivity for twenty-five hundred home broadband users."},
-    {"name": "n300_13_dc_topology", "src": "otap", "clip_start": 90, "clip_dur": 60, "target_dur": 18,
-     "text": "The MRA retrieves network topology from the Knowledge Graph, identifying CSS devices and FTTH network paths. It maps nine relevant technologies — including BNG, PPPoE, DHCP, RADIUS, and MPLS — and deploys six specialized agents."},
-    {"name": "n300_14_dc_config", "src": "otap", "clip_start": 155, "clip_dur": 55, "target_dur": 16,
-     "text": "The BNG Agent finds a VLAN misconfiguration on the Bundle-Ether interface. It presents the Configuration Change Timeline — pre-event, during-event, and proposed configurations side by side for transparent review and approval."},
-    {"name": "n300_15_dc_results", "src": "otap", "clip_start": 210, "clip_dur": 55, "target_dur": 14,
-     "text": "After deployment, real-time monitoring shows recovery — twelve hundred active sessions, ninety-four percent authentication success. A comprehensive Ticket Summary Report is generated with the full incident timeline."},
+    # --- Use Case Slides (static PNG → video) ---
+    {"name": "n300_12_slide_ip", "src": "slide", "slide_path": "slide_ip_transport_usecases.png", "target_dur": 18,
+     "text": "The platform extends well beyond incident management. Across IP Transport, eleven use cases are supported — including Agentic AI root cause analysis, customer experience management, predictive maintenance, and intelligent capacity planning. Each use case is powered by specialized agents working together autonomously."},
+    {"name": "n300_13_slide_dc", "src": "slide", "slide_path": "slide_dc_usecases.png", "target_dur": 16,
+     "text": "For service provider datacenters, nineteen use cases are delivered across three deployment drops — powered by fifty-eight specialized agents covering fabric management, workload optimization, and datacenter incident resolution."},
+    {"name": "n300_14_slide_security", "src": "slide", "slide_path": "slide_security_usecases.png", "target_dur": 14,
+     "text": "And with the Jio AI SOC, fifteen security use cases are handled by seventy-one dedicated agents — from threat detection and response to compliance monitoring and vulnerability management."},
     # --- Closing ---
-    {"name": "n300_16_closing", "src": "mwc", "clip_start": 425, "clip_dur": 8, "target_dur": 8,
-     "text": "From ticket creation to verified remediation, across service provider and broadband networks — powered by Cisco's Agentic AI. This is intelligent network operations."},
+    {"name": "n300_15_closing", "src": "mwc", "clip_start": 425, "clip_dur": 8, "target_dur": 8,
+     "text": "From ticket creation to verified remediation — powered by Cisco's Agentic AI. This is intelligent network operations."},
 ]
 
 
 # ============================================================
-# 120s VERSION: Condensed Incident Mgmt (MWC only)
-# Structure: OTAP intro (10s) + demo clips (~78s) + Cisco ending (7s) = ~95s
+# 120s VERSION: Condensed Incident Mgmt + DC Use Case
+# Structure: OTAP intro (10s) + demo clips (~103s) + Cisco ending (7s) = ~120s
 # ============================================================
 CAPTIONS_120 = [
     {"start": 0, "end": 8,
@@ -212,11 +210,18 @@ CAPTIONS_120 = [
      "text": "Timers updated to stable values\\nEngineer approves and deploys"},
     {"start": 61, "end": 69,
      "text": "Deployment successful | Ticket completed\\nAI Assistant confirms resolution"},
-    {"start": 69, "end": 75,
+    {"start": 69, "end": 79,
+     "text": "IP Transport: 11 Use Cases\\nAgentic AI RCA | Customer Experience | Predictive Maintenance"},
+    {"start": 79, "end": 89,
+     "text": "SP Datacenter: 19 Use Cases | 58 Agents\\nAcross 3 deployment drops"},
+    {"start": 89, "end": 97,
+     "text": "AI SOC: 15 Security Use Cases | 71 Agents\\nComprehensive network protection"},
+    {"start": 97, "end": 103,
      "text": "Cisco Agentic AI\\nIntelligent Network Operations"},
 ]
 
 NARR_120_SECTIONS = [
+    # --- Incident Management (BGP/HDFC) condensed ---
     {"name": "n120_01_ticket_escalate", "src": "mwc", "clip_start": 0, "clip_dur": 12, "target_dur": 8,
      "text": "A BGP incident affecting HDFC banking operations is reported. The engineer creates a ticket and escalates to Cisco's Agentic AI."},
     {"name": "n120_02_io_agent", "src": "mwc", "clip_start": 35, "clip_dur": 18, "target_dur": 7,
@@ -231,7 +236,15 @@ NARR_120_SECTIONS = [
      "text": "The configuration is reviewed — updating timers to stable, recommended values. The engineer approves and deploys."},
     {"name": "n120_07_verify", "src": "mwc", "clip_start": 315, "clip_dur": 22, "target_dur": 8,
      "text": "Deployment successful. The ticket is marked as Completed. The AI Assistant confirms full resolution."},
-    {"name": "n120_08_closing", "src": "mwc", "clip_start": 395, "clip_dur": 15, "target_dur": 6,
+    # --- Use Case Slides (static PNG → video) ---
+    {"name": "n120_08_slide_ip", "src": "slide", "slide_path": "slide_ip_transport_usecases.png", "target_dur": 10,
+     "text": "Beyond incident management, the platform supports eleven IP Transport use cases — from Agentic AI root cause analysis to customer experience management and predictive maintenance."},
+    {"name": "n120_09_slide_dc", "src": "slide", "slide_path": "slide_dc_usecases.png", "target_dur": 10,
+     "text": "For service provider datacenters, nineteen use cases are supported across three deployment drops — powered by fifty-eight specialized agents."},
+    {"name": "n120_10_slide_security", "src": "slide", "slide_path": "slide_security_usecases.png", "target_dur": 8,
+     "text": "And for the AI SOC, fifteen security use cases are handled by seventy-one dedicated agents — ensuring comprehensive network protection."},
+    # --- Closing ---
+    {"name": "n120_11_closing", "src": "mwc", "clip_start": 425, "clip_dur": 8, "target_dur": 6,
      "text": "From ticket creation to verified remediation — Cisco's Agentic AI for intelligent network operations."},
 ]
 
@@ -299,6 +312,16 @@ def make_clip(src, ss, dur, target_dur, outfile):
     actual = get_duration(outfile)
     speed = 1/ratio
     print(f"    {os.path.basename(outfile)}: src {ss}-{ss+dur}s -> {actual:.1f}s ({speed:.2f}x)")
+
+
+def make_slide_clip(slide_path, target_dur, outfile):
+    """Create a video clip from a static PNG image."""
+    run(f'ffmpeg -y -loop 1 -i "{slide_path}" -t {target_dur} '
+        f'-vf "scale={RESOLUTION}:force_original_aspect_ratio=decrease,'
+        f'pad={RESOLUTION}:(ow-iw)/2:(oh-ih)/2:black" '
+        f'-c:v libx264 -preset {PRESET} -crf {CRF} -r 30 -pix_fmt yuv420p -an "{outfile}"')
+    actual = get_duration(outfile)
+    print(f"    {os.path.basename(outfile)}: slide -> {actual:.1f}s")
 
 
 def reencode_source(src, outfile, label="source"):
@@ -397,8 +420,13 @@ def build_short_version(version_name, sections, audio_dir_name, final_filename, 
         narr_dur = get_duration(raw_audio)
         # Use max(target_dur, narr_dur) so clip is never shorter than narration
         clip_target = max(sec["target_dur"], narr_dur)
-        src_file = get_source(sec.get("src", "mwc"))
-        make_clip(src_file, sec["clip_start"], sec["clip_dur"], clip_target, outf)
+        if sec.get("src") == "slide":
+            # Static PNG slide → video clip
+            slide_file = os.path.join(WORK, sec["slide_path"])
+            make_slide_clip(slide_file, clip_target, outf)
+        else:
+            src_file = get_source(sec.get("src", "mwc"))
+            make_clip(src_file, sec["clip_start"], sec["clip_dur"], clip_target, outf)
         clip_files.append(outf)
         narration_files.append(raw_audio)
 
@@ -684,9 +712,9 @@ def build_200s_captions(demo_silent_from_voice=None):
     print("\nStep 2: Burn captions onto demo video")
     demo_captioned = os.path.join(WORK, "mwc_200s_demo_captioned.mp4")
     subtitle_style = (
-        "FontName=Arial,FontSize=24,PrimaryColour=&H00FFFFFF,"
+        "FontName=Arial,FontSize=12,PrimaryColour=&H00FFFFFF,"
         "OutlineColour=&H80000000,BorderStyle=4,Outline=1,Shadow=0,"
-        "MarginV=40,Alignment=2"
+        "MarginV=20,Alignment=2"
     )
     run(f'ffmpeg -y -i "{demo_silent}" '
         f"-vf \"subtitles='{srt_file}':force_style='{subtitle_style}'\" "
@@ -752,9 +780,9 @@ def build_120s_captions(demo_silent_from_voice=None):
     print("\nStep 2: Burn captions onto demo video")
     demo_captioned = os.path.join(WORK, "mwc_120s_demo_captioned.mp4")
     subtitle_style = (
-        "FontName=Arial,FontSize=24,PrimaryColour=&H00FFFFFF,"
+        "FontName=Arial,FontSize=12,PrimaryColour=&H00FFFFFF,"
         "OutlineColour=&H80000000,BorderStyle=4,Outline=1,Shadow=0,"
-        "MarginV=40,Alignment=2"
+        "MarginV=20,Alignment=2"
     )
     run(f'ffmpeg -y -i "{demo_silent}" '
         f"-vf \"subtitles='{srt_file}':force_style='{subtitle_style}'\" "
@@ -770,17 +798,22 @@ def build_120s_captions(demo_silent_from_voice=None):
         f'"{demo_captioned_audio}"',
         "Adding silent audio track...")
 
-    # Step 4: OTAP intro + Cisco ending
-    print("\nStep 4: OTAP intro + Cisco ending")
-    otap_raw = os.path.join(os.path.join(WORK, "audio_mwc_full"), "otap_intro_raw.mp3")
-    otap_out = os.path.join(WORK, "mwc_120s_cap_otap.mp4")
-    make_otap_intro(10, otap_out, otap_raw)
+    # Step 4: OTAP intro (SILENT — no voice for captions version) + Cisco ending
+    print("\nStep 4: OTAP intro (silent) + Cisco ending")
+    otap_out = os.path.join(WORK, "mwc_120s_cap_otap_silent.mp4")
+    run(f'ffmpeg -y -i "{OTAP_VID}" -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 '
+        f'-t 10 -vf "scale={RESOLUTION}:force_original_aspect_ratio=decrease,'
+        f'pad={RESOLUTION}:(ow-iw)/2:(oh-ih)/2:black" '
+        f'-map 0:v -map 1:a -c:v libx264 -preset {PRESET} -crf {CRF} -r 30 '
+        f'-c:a aac -b:a {AUDIO_BITRATE} -ar 44100 -ac 2 -shortest "{otap_out}"',
+        "Creating silent OTAP intro...")
+    print(f"    OTAP intro: {get_duration(otap_out):.1f}s (silent)")
     cisco_end = os.path.join(WORK, "mwc_120s_cap_cisco_end.mp4")
     make_cisco_ending(cisco_end)
 
     # Step 5: Final concat
     print("\nStep 5: Final concatenation")
-    final_out = os.path.join(FINAL, "MWC-Demo-120s-captions-v1.1.mp4")
+    final_out = os.path.join(FINAL, "MWC-Demo-120s-captions-v1.3.mp4")
     final_dur = concat_videos([otap_out, demo_captioned_audio, cisco_end], final_out)
     print(f"\n  120s CAPTIONS VERSION: {final_out}")
     print(f"  Duration: {int(final_dur//60)}:{int(final_dur%60):02d} ({final_dur:.1f}s)")
@@ -830,7 +863,7 @@ if __name__ == "__main__":
             "300s VERSION",
             NARR_300_SECTIONS,
             "audio_mwc_300s",
-            "MWC-Demo-300s-v1.0.mp4",
+            "MWC-Demo-300s-v1.1.mp4",
             otap_dur=27
         )
         results["300s"] = out
@@ -841,7 +874,7 @@ if __name__ == "__main__":
             "120s VERSION (VOICE)",
             NARR_120_SECTIONS,
             "audio_mwc_120s",
-            "MWC-Demo-120s-voice-v1.1.mp4",
+            "MWC-Demo-120s-voice-v1.2.mp4",
             otap_dur=10
         )
         results["120s-voice"] = out
