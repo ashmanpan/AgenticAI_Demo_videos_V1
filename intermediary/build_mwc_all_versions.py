@@ -808,12 +808,18 @@ def build_120s_captions(demo_silent_from_voice=None):
         f'-c:a aac -b:a {AUDIO_BITRATE} -ar 44100 -ac 2 -shortest "{otap_out}"',
         "Creating silent OTAP intro...")
     print(f"    OTAP intro: {get_duration(otap_out):.1f}s (silent)")
-    cisco_end = os.path.join(WORK, "mwc_120s_cap_cisco_end.mp4")
-    make_cisco_ending(cisco_end)
+    cisco_end = os.path.join(WORK, "mwc_120s_cap_cisco_end_silent.mp4")
+    run(f'ffmpeg -y -ss 280 -i "{OTAP_VID}" -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 '
+        f'-t 7 -vf "scale={RESOLUTION}:force_original_aspect_ratio=decrease,'
+        f'pad={RESOLUTION}:(ow-iw)/2:(oh-ih)/2:black" '
+        f'-map 0:v -map 1:a -c:v libx264 -preset {PRESET} -crf {CRF} -r 30 '
+        f'-c:a aac -b:a {AUDIO_BITRATE} -ar 44100 -ac 2 -shortest "{cisco_end}"',
+        "Creating silent Cisco ending...")
+    print(f"    Cisco ending: {get_duration(cisco_end):.1f}s (silent)")
 
     # Step 5: Final concat
     print("\nStep 5: Final concatenation")
-    final_out = os.path.join(FINAL, "MWC-Demo-120s-captions-v1.3.mp4")
+    final_out = os.path.join(FINAL, "MWC-Demo-120s-captions-v1.4.mp4")
     final_dur = concat_videos([otap_out, demo_captioned_audio, cisco_end], final_out)
     print(f"\n  120s CAPTIONS VERSION: {final_out}")
     print(f"  Duration: {int(final_dur//60)}:{int(final_dur%60):02d} ({final_dur:.1f}s)")
